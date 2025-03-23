@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const buyTicketButton = document.getElementById('buy-ticket');
     const movieDescription = document.getElementById('movie-description');
 
-    let currentMovieId = null;
+    let currentMovieId = 2;
 
     function fetchAndDisplayMovie(movieId) {
-        fetch(`http://localhost:3000/films/${movieId}`)
+        fetch(`http://localhost:4000/films/${movieId}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 buyTicketButton.onclick = () => {
                     if (ticketsAvailable > 0) {
-                        fetch(`http://localhost:3000/films/${movieId}`, {
+                        fetch(`http://localhost:4000/films/${movieId}`, {
                             method: 'PATCH',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ tickets_sold: movie.tickets_sold + 1 }),
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function fetchAndDisplayMoviesList() {
-        fetch('http://localhost:3000/films')
+        fetch('http://localhost:4000/films')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     deleteButton.addEventListener('click', (event) => {
                         event.stopPropagation();
-                        fetch(`http://localhost:3000/films/${movie.id}`, {
+                        fetch(`http://localhost:4000/films/${movie.id}`, {
                             method: 'DELETE',
                         })
                             .then(response => {
