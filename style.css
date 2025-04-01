@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -19,7 +19,7 @@ body {
     gap: 20px;
 }
 
-/* Movie List */
+
 .movie-list {
     width: 40%;
     background-color: white;
@@ -43,7 +43,7 @@ body {
     background-color: #ddd;
 }
 
-/* Delete Button */
+
 .delete-btn {
     margin-left: 10px;
     padding: 5px 10px;
@@ -58,7 +58,7 @@ body {
     background-color: darkred;
 }
 
-/* Movie Details */
+
 .movie-details {
     width: 60%;
     background-color: white;
